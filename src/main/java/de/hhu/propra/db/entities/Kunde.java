@@ -19,5 +19,5 @@ public class Kunde {
 
     // TODO: Hier muss irgendetwas mit Autos hin...
     @OneToMany(cascade = CascadeType.ALL)
-    private List<Auto> fahrzeuge;
+    private List<Auto> autos;
 }
