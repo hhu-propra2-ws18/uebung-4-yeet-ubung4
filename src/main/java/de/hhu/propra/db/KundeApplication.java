@@ -21,6 +21,9 @@ public class KundeApplication{
     public CommandLineRunner run() {
         return (String... args) -> {
             System.out.println("Hello, World!");
+            //Java Stream API & Lambda
+            kunden.findAllByAutosFarbe("blau").forEach(System.out::println);
+
         };
     }
 }
