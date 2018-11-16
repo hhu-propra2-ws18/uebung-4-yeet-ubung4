@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html lang="de"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -22,13 +22,13 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <td>Vorwerk & Co. KG</td>
-        <td>Wuppertal</td>
-        <td>89140</td>
+    <tr th:each="kunde: ${kunden}">
+        <td th:text="${kunde.getName()}"></td>
+        <td th:text="${kunde.getStadt()}"></td>
+        <td th:text="${kunde.getPlz()}"></td>
         <td>
-            <ul>
-                <li>Volkswagen -- schwarz (2000 ccm)</li>
+            <ul th:each="auto: ${kunde.getAutos()}">
+                <li th:text="${auto.getMarke()+' -- '+auto.getFarbe()+' ('+auto.getHubraum()+' ccm)'}"></li>
             </ul>
         </td>
     </tr>
